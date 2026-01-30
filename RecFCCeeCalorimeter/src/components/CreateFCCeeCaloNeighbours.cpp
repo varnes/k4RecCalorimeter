@@ -558,7 +558,10 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
                 if (segmentationType2 == "FCCSWEndcapTurbine_k4geo") {
                   auto endcapDecoder =
                       m_geoSvc->getDetector()->readout(m_readoutNamesSegmented[iSys2]).idSpec().decoder();
-
+		  if (ecalEndcapTurbineSegmentation == nullptr) {
+		    ecalEndcapTurbineSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*>(aSegmentation2);
+		  }
+		    
                   int iWheel = 2;
                   int iSide;
                   if (itheta == extrema[2].first) {
@@ -568,6 +571,7 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
                   }
 
                   unsigned numECCellsRho = ecalEndcapTurbineSegmentation->numCellsRho(iWheel);
+		  
                   // Loop over segmentation cells
                   dd4hep::DDSegmentation::CellID endcapCellId = 0;
 		
