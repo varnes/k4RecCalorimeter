@@ -570,7 +570,7 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
                     iSide = -1;
                   }
 
-                  unsigned numECCellsRho = ecalEndcapTurbineSegmentation->numCellsRho(iWheel);		  
+                  unsigned numECCellsRho = ecalEndcapTurbineSegmentation->numCellsRho(iWheel);
                   // Loop over segmentation cells
                   dd4hep::DDSegmentation::CellID endcapCellId = 0;
 		
