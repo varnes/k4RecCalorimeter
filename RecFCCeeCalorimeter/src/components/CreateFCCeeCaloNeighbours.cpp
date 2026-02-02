@@ -561,7 +561,10 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
 		  if (ecalEndcapTurbineSegmentation == nullptr) {
 		    ecalEndcapTurbineSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*>(aSegmentation2);
 		  }
-		    
+                  if (ecalEndcapTurbineSegmentation == nullptr) {
+                    ecalEndcapTurbineSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*>(aSegmentation2);
+                  }
+ 
                   int iWheel = 2;
                   int iSide;
                   if (itheta == extrema[2].first) {
