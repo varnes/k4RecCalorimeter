@@ -558,9 +558,6 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
                 if (segmentationType2 == "FCCSWEndcapTurbine_k4geo") {
                   auto endcapDecoder =
                       m_geoSvc->getDetector()->readout(m_readoutNamesSegmented[iSys2]).idSpec().decoder();
-		  if (ecalEndcapTurbineSegmentation == nullptr) {
-		    ecalEndcapTurbineSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*>(aSegmentation2);
-		  }
                   if (ecalEndcapTurbineSegmentation == nullptr) {
                     ecalEndcapTurbineSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*>(aSegmentation2);
                   }
